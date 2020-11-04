@@ -1,0 +1,11 @@
+This playbook install mysql a  
+
+
+- name: To Deploy MYSQL
+  hosts: dbservers
+  remote_user: root
+  sudo: yes
+  roles:
+  - mysql
+  tags:
+  - mysql

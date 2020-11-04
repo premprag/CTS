@@ -1,7 +1,14 @@
-- name: Install apache
-  hosts: webservers 
-  sudo: yes
+Configure and deploy Apache
+- name: provision instance for Apache
+  hosts: localhost
+  connection: local
+  remote_user: ec2-user
+  gather_facts: false
   roles:
-  - apache 
-  tags:
-  - httpd
+    - ec2_apache
+
+- name: install Apache
+  hosts: launched
+  remote_user: ec2-user
+  roles:
+    - apache

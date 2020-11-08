@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: nginxwebserver
+  name: nginxwebserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginxwebserver
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: nginxwebserver
+    spec:
+      containers:
+      - image: nginxdemos/hello
+        name: hello
+        resources: {}
+status: {}+
++
